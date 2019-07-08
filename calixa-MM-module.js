@@ -26,9 +26,10 @@ Module.register("calixa-MM-module", {
 
 		// Schedule update timer.
 		this.getData();
-		`setInterval(function() {
+
+		setInterval(function() {
 			self.updateDom();
-		}, this.config.updateInterval);`
+		}, this.config.updateInterval);
 	},
 
 	/*
@@ -38,10 +39,18 @@ Module.register("calixa-MM-module", {
 	 *
 	 */
 	getData: function() {
+
 		var self = this;
 
-		var urlApi = "https://jsonplaceholder.typicode.com/posts/1";
+		var urlApi = "http://34.74.37.123:5001/mock_recom";
 		var retry = true;
+
+		/*var zmq = require('zmq');
+		var sock = zmq.socket('pull');
+		sock.connect('tcp://127.0.0.1:5557')
+		sock.on('message', function(msg){
+			console.log('work: %s', msg.toString());
+		})*/
 
 		var dataRequest = new XMLHttpRequest();
 
@@ -106,30 +115,57 @@ Module.register("calixa-MM-module", {
 
 			wrapperDataRequest.innerHTML = `
 
-				<h5>Recommended for you</h5>
+				<h5>Recommended</br>for you</h5>
 
 				<div class="left_panel">
 
 					<div class="img_box">
 						<a><img class="img" src="https://aritzia.scene7.com/is/image/Aritzia/large/s19_04_a08_69045_10108_on_a.jpg">
-						<img class="cart" src="modules/calixa-MM-module/img/cart.jpg"><b>&nbsp A nice dress.</b>
+						<img class="cart" src="modules/calixa-MM-module/img/cart.jpg"><b>&nbsp Kate Skinny Pant</b>
 						</a>
 					</div>
 
 					<div class="img_box">
 						<a><img class="img" src="https://aritzia.scene7.com/is/image/Aritzia/large/s19_04_a08_71233_15725_on_b.jpg">
-						<img class="cart" src="modules/calixa-MM-module/img/cart.jpg"><b>&nbsp A nice dress.</b>
+						<img class="cart" src="modules/calixa-MM-module/img/cart.jpg"><b>&nbsp Basic High Rise Legging</b>
 						</a>
 					</div>
 
 					<div class="img_box">
 						<a><img class="img" src="https://aritzia.scene7.com/is/image/Aritzia/large/s19_04_a08_69665_11420_on_b.jpg">
-						<img class="cart" src="modules/calixa-MM-module/img/cart.jpg"><b>&nbsp A nice dress.</b>
+						<img class="cart" src="modules/calixa-MM-module/img/cart.jpg"><b>&nbsp Sienna Crop Top</b>
 						</a>
 					</div>
 
 				</div>
 			`;
+
+			/*wrapperDataRequest.innerHTML = `
+
+				<h5>Recommended for you</h5>
+
+				<div class="left_panel">
+
+					<div class="img_box">
+						<a><img class="img" src="` + this.dataRequest.recommendation[0].url + `">
+						<img class="cart" src="modules/calixa-MM-module/img/cart.jpg"><b>&nbsp ` + this.dataRequest.recommendation[0].name + `</b>
+						</a>
+					</div>
+
+					<div class="img_box">
+						<a><img class="img" src="` + this.dataRequest.recommendation[1].url + `">
+						<img class="cart" src="modules/calixa-MM-module/img/cart.jpg"><b>&nbsp ` + this.dataRequest.recommendation[1].url + `</b>
+						</a>
+					</div>
+
+					<div class="img_box">
+						<a><img class="img" src="` + this.dataRequest.recommendation[2].url + `">
+						<img class="cart" src="modules/calixa-MM-module/img/cart.jpg"><b>&nbsp ` + this.dataRequest.recommendation[2].name + `</b>
+						</a>
+					</div>
+
+				</div>
+			`;*/
 
 			wrapper.appendChild(wrapperDataRequest);
 		}

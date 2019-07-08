@@ -12,12 +12,12 @@
  h5 {
     margin: 0px;
     margin-bottom: 30px;
-    color: blanchedalmond;
+    text-align: center;
+    line-height: 120%;
  }
 
  .left_panel {
     margin: 0px;
-    //border: 1px solid white;
     font-size: 18px;
     text-align: center;
  }
