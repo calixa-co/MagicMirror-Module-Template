@@ -148,19 +148,19 @@ Module.register("calixa-MM-module", {
 				<h5>Recommended for you</h5>
 
 					<div class="img_box">
-						<a><img class="img" src="` + this.dataRequest.recommendation[0].url + `">
+						<a><img class="img" src="` + this.dataRequest.recommendation[0].url + `"></br>
 						<img class="cart" src="modules/calixa-MM-module/img/cart.jpg"><b>&nbsp ` + this.dataRequest.recommendation[0].name + `</b>
 						</a>
 					</div>
 
 					<div class="img_box">
-						<a><img class="img" src="` + this.dataRequest.recommendation[1].url + `">
+						<a><img class="img" src="` + this.dataRequest.recommendation[1].url + `"></br>
 						<img class="cart" src="modules/calixa-MM-module/img/cart.jpg"><b>&nbsp ` + this.dataRequest.recommendation[1].name + `</b>
 						</a>
 					</div>
 
 					<div class="img_box">
-						<a><img class="img" src="` + this.dataRequest.recommendation[2].url + `">
+						<a><img class="img" src="` + this.dataRequest.recommendation[2].url + `"></br>
 						<img class="cart" src="modules/calixa-MM-module/img/cart.jpg"><b>&nbsp ` + this.dataRequest.recommendation[2].name + `</b>
 						</a>
 					</div>
