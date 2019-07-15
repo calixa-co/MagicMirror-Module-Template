@@ -10,8 +10,9 @@
 Module.register("calixa-MM-module", {
 
 	defaults: {
-		updateInterval: 1000,
-		retryDelay: 1000
+		updateInterval: 5000,
+		retryDelay: 5000,
+		cnt: 0
 	},
 
 	requiresVersion: "2.1.0", // Required version of MagicMirror
@@ -113,7 +114,7 @@ Module.register("calixa-MM-module", {
 
 			var wrapperDataRequest = document.createElement('div');
 
-			wrapperDataRequest.innerHTML = `
+			/*wrapperDataRequest.innerHTML = `
 
 				<h5>Recommended</br>for you</h5>
 
@@ -138,13 +139,13 @@ Module.register("calixa-MM-module", {
 					</div>
 
 				</div>
-			`;
+			`;*/
 
-			/*wrapperDataRequest.innerHTML = `
-
-				<h5>Recommended for you</h5>
+			wrapperDataRequest.innerHTML = `
 
 				<div class="left_panel">
+
+				<h5>Recommended for you</h5>
 
 					<div class="img_box">
 						<a><img class="img" src="` + this.dataRequest.recommendation[0].url + `">
@@ -154,7 +155,7 @@ Module.register("calixa-MM-module", {
 
 					<div class="img_box">
 						<a><img class="img" src="` + this.dataRequest.recommendation[1].url + `">
-						<img class="cart" src="modules/calixa-MM-module/img/cart.jpg"><b>&nbsp ` + this.dataRequest.recommendation[1].url + `</b>
+						<img class="cart" src="modules/calixa-MM-module/img/cart.jpg"><b>&nbsp ` + this.dataRequest.recommendation[1].name + `</b>
 						</a>
 					</div>
 
@@ -165,7 +166,7 @@ Module.register("calixa-MM-module", {
 					</div>
 
 				</div>
-			`;*/
+			`;
 
 			wrapper.appendChild(wrapperDataRequest);
 		}
@@ -208,7 +209,9 @@ Module.register("calixa-MM-module", {
 
 		// the data if load
 		// send notification to helper
-		this.sendSocketNotification("calixa-MM-module-NOTIFICATION_TEST", data);
+		var notif = "calixa-MM-module-NOTIFICATION_TEST N° " + self.config.cnt
+		this.sendSocketNotification( notif, data);
+		self.config.cnt += 1;
 	},
 
 	// socketNotificationReceived from helper

@@ -17,20 +17,23 @@
  }
 
  .left_panel {
-    margin: 0px;
-    font-size: 18px;
+    padding: 0;  
     text-align: center;
+    /*border: 5px solid white;*/
+    height: 100%;
+    width: 15%;
  }
 
- .img_box {
-    height: 300px;
+.img_box {
+    font-size: 18px;
+    line-height: 120%;
+    margin: auto;
+    margin-bottom: 30px;
+    width: 70%;
 }
 
 .img {
-    display: block;
-    width: 175px;
-    margin: auto;
-    margin-bottom: 0px;
+    width: 100%;
 }
 
 .cart {
