@@ -10,33 +10,33 @@
  */
 
  h5 {
-    margin: 0px;
-    margin-bottom: 30px;
+    margin: 0;
+    margin-bottom: 10%;
     text-align: center;
     line-height: 120%;
+    font-size: 0.8em;
  }
 
  .left_panel {
-    padding: 0;  
     text-align: center;
-    /*border: 5px solid white;*/
     height: 100%;
     width: 15%;
  }
 
 .img_box {
-    font-size: 18px;
+    font-size: 0.5em;
     line-height: 120%;
     margin: auto;
-    margin-bottom: 30px;
+    margin-bottom: 10%;
     width: 70%;
 }
 
 .img {
     width: 100%;
+    margin-bottom: 3%;
 }
 
 .cart {
     position: inline-block;
-    height: 15px;
+    height: 1em;
 }
