@@ -165,14 +165,16 @@ Module.register("calixa-MM-module", {
 						</a>
 					</div>
 
+					<div class="img_box">
+						<a><img class="img" src="` + this.dataRequest.recommendation[1].url + `"></br>
+						<img class="cart" src="modules/calixa-MM-module/img/cart.jpg"><b>&nbsp ` + this.dataRequest.recommendation[1].name + `</b>
+						</a>
+					</div>
+
 				</div>
 			`;
 
-			/*<div class="img_box">
-						<a><img class="img" src="` + this.dataRequest.recommendation[3].url + `"></br>
-						<img class="cart" src="modules/calixa-MM-module/img/cart.jpg"><b>&nbsp ` + this.dataRequest.recommendation[3].name + `</b>
-						</a>
-			</div>*/
+			
 
 			wrapper.appendChild(wrapperDataRequest);
 		}
